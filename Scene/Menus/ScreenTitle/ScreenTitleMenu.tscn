@@ -18,23 +18,23 @@ func _process(delta) -> void:
 	scroll_offset += scrolling_speed * delta
 "
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 176, 66 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 176, 66 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 176, 66 )
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 176, 66 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 176, 66 )
 
@@ -46,11 +46,11 @@ Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 0 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 0 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 6 )
-Button/styles/focus = SubResource( 4 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = SubResource( 5 )
+Button/styles/disabled = SubResource( 2 )
+Button/styles/focus = SubResource( 3 )
+Button/styles/hover = SubResource( 4 )
+Button/styles/normal = SubResource( 5 )
+Button/styles/pressed = SubResource( 6 )
 
 [node name="ScreenTitleMenu" type="Node2D"]
 script = ExtResource( 3 )
@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = SubResource( 1 )
-scrolling_speed = Vector2( 50, 50 )
+scrolling_speed = Vector2( 30, 30 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 2047, 1330 )

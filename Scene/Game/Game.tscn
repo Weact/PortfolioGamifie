@@ -6,15 +6,7 @@
 [ext_resource path="res://Scene/Planets/ColorSmasherPlanet/ColorSmasherPlanet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scene/Planets/DeveloperPlanet/DeveloperPlanet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/Planets/HorrorShipTaskPlanet/HorrorShipTaskPlanet.tscn" type="PackedScene" id=6]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends ParallaxBackground
-
-export(Vector2) var scrolling_speed = Vector2.ZERO
-
-func _process(delta) -> void:
-	scroll_offset += scrolling_speed * delta
-"
+[ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -22,8 +14,6 @@ __meta__ = {
 }
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = SubResource( 1 )
-scrolling_speed = Vector2( 20, 20 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 2047, 1330 )
@@ -42,22 +32,26 @@ __meta__ = {
 
 [node name="Planets" type="Node2D" parent="."]
 
+[node name="XionLeakPlanet" parent="Planets" instance=ExtResource( 2 )]
+position = Vector2( 908, 1040 )
+scale = Vector2( 1.5, 1.5 )
+
 [node name="HorrorShipTaskPlanet" parent="Planets" instance=ExtResource( 6 )]
-position = Vector2( 152, 933 )
-script = null
+position = Vector2( -568, 1605 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="HauntedDreamPlanet" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 1572, 209 )
-script = null
+position = Vector2( 3180, -7 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="DeveloperPlanet" parent="Planets" instance=ExtResource( 5 )]
-position = Vector2( 198, 152 )
-script = null
+position = Vector2( -474, -760 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="ColorSmasherPlanet" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 1007, 944 )
-script = null
+position = Vector2( 3407, 2040 )
+scale = Vector2( 1.5, 1.5 )
 
-[node name="XionLeakPlanet" parent="Planets" instance=ExtResource( 2 )]
-position = Vector2( 1780, 952 )
-script = null
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 711.816, 317.604 )
+acceleration = 500

@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scene/Planets/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Planets/DeveloperPlanet/DeveloperInformationPlanet.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Planets/DeveloperPlanet/DeveloperPlanet.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -133,18 +134,64 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
 "name": "default",
-"speed": 14.0
+"speed": 7.0
 } ]
 
 [sub_resource type="CircleShape2D" id=27]
-radius = 251.205
+radius = 137.746
+
+[sub_resource type="Animation" id=28]
+resource_name = "move_informations"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlanetInfosContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -100, -100 ), Vector2( -220, -220 ) ]
+}
 
 [node name="DeveloperPlanet" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
 shape = SubResource( 27 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/move_informations = SubResource( 28 )
+
+[node name="Label" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "DRUCKES Lucas"
+
+[node name="Label2" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="1"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "C++ / C#"
+
+[node name="Label3" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="2"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "HTML, JS, PHASER3, CSS, PHP, SQL"
+
+[node name="Label4" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="3"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "GODOT, UNREAL, UNITY"
+
+[node name="Label5" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="4"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "LUDUS ACADEMIE"
