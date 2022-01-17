@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scene/Planets/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Planets/ColorSmasherPlanet/ColorSmasherPlanet.png" type="Texture" id=2]
 [ext_resource path="res://Scene/Planets/ColorSmasherPlanet/ColorSmasherPlanet.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/GameFont3D.tres" type="DynamicFont" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -158,10 +159,11 @@ tracks/0/keys = {
 
 [node name="ColorSmasherPlanet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialColorSmasher.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 3
+frame = 17
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
@@ -170,12 +172,20 @@ shape = SubResource( 27 )
 [node name="AnimationPlayer" parent="." index="2"]
 anims/move_informations = SubResource( 28 )
 
+[node name="HBoxContainer" parent="PlanetInfosContainer" index="0"]
+mouse_filter = 2
+
+[node name="VBoxContainer" parent="PlanetInfosContainer/HBoxContainer" index="0"]
+mouse_filter = 2
+
 [node name="Label" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="0"]
 margin_right = 40.0
 margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
 text = "Color Smasher"
 
 [node name="Label2" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="1"]
 margin_right = 40.0
 margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
 text = "School Project"

@@ -15,32 +15,36 @@ var movement = Vector2.ZERO
 
 #### BUILT-IN ####
 func _physics_process(delta: float) -> void:
-	move(delta)
+	movements_handler(delta)
+	move()
 
 #### LOGIC ####
 
-func move(delta):
-	if not moving:
-		speed = 0
-		if is_instance_valid($Reactors):
-			for reactor in $Reactors.get_children():
-				reactor.emitting = false
-	else:
+func movements_handler(delta) -> void:
+	if moving:
+		destination = get_global_mouse_position()
+		look_at(destination)
+		reactors(true)
+		
 		speed += acceleration * delta
-		if speed > max_speed:
-			speed = max_speed
-	
+		if speed > max_speed: speed = max_speed
+	else:
+		speed = 0
+		reactors(false)
+
+func move() -> void:
 	movement = position.direction_to(destination) * speed
 	move_direction = rad2deg(destination.angle_to_point(position))
 	
 	if position.distance_to(destination) > 50:
 		movement = move_and_slide(movement)
-		if is_instance_valid($Reactors):
-			for reactor in $Reactors.get_children():
-				if not reactor.emitting:
-					reactor.emitting = !reactor.emitting
 	else:
 		moving = false
+
+func reactors(activated: bool) -> void:
+	if is_instance_valid($Reactors):
+			for reactor in $Reactors.get_children():
+				reactor.emitting = activated
 
 #### VIRTUALS ####
 
@@ -49,7 +53,7 @@ func move(delta):
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed('move_player'):
 		moving = true
-		destination = get_global_mouse_position()
-		look_at(destination)
+	if event.is_action_released('move_player'):
+		moving = false
 
 #### SIGNAL RESPONSES ####

@@ -1,0 +1,374 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/GameFont3D.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.5, 14.5 )
+
+[node name="SpatialColorSmasher" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="C" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="C"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "C"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="C"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="O" type="RigidBody2D" parent="."]
+position = Vector2( 32, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="O"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "O"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="O"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="L" type="RigidBody2D" parent="."]
+position = Vector2( 64, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="L"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "L"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="L"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="O2" type="RigidBody2D" parent="."]
+position = Vector2( 96, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="O2"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "O"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="O2"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="R" type="RigidBody2D" parent="."]
+position = Vector2( 128, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="R"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "R
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="R"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="S" type="RigidBody2D" parent="."]
+position = Vector2( 176, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="S"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "S"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="S"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="M" type="RigidBody2D" parent="."]
+position = Vector2( 208, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="M"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "M"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="M"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="A" type="RigidBody2D" parent="."]
+position = Vector2( 240, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="A"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "A"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="A"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="S2" type="RigidBody2D" parent="."]
+position = Vector2( 272, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="S2"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "S"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="S2"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="H" type="RigidBody2D" parent="."]
+position = Vector2( 304, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="H"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "H"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="H"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="E" type="RigidBody2D" parent="."]
+position = Vector2( 336, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="E"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "E"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="E"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="R2" type="RigidBody2D" parent="."]
+position = Vector2( 368, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="R2"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "R
+
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="R2"]
+position = Vector2( 18.5, 22.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

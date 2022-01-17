@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scene/Planets/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Planets/HorrorShipTaskPlanet/HorrorShipTaskPlanet.png" type="Texture" id=2]
 [ext_resource path="res://Scene/Planets/HorrorShipTaskPlanet/HorrorShipTaskPlanet.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/GameFont3D.tres" type="DynamicFont" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -162,7 +163,7 @@ script = ExtResource( 3 )
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 20
+frame = 4
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
@@ -171,23 +172,28 @@ shape = SubResource( 27 )
 [node name="AnimationPlayer" parent="." index="2"]
 anims/move_informations = SubResource( 28 )
 
+[node name="HBoxContainer" parent="PlanetInfosContainer" index="0"]
+mouse_filter = 2
+
 [node name="VBoxContainer" parent="PlanetInfosContainer/HBoxContainer" index="0"]
 margin_left = 0.0
-margin_right = 159.0
-margin_bottom = 49.0
+margin_right = 588.0
+margin_bottom = 94.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_right = 159.0
-margin_bottom = 31.0
-text = "HORROR SHIP TASK
-"
+margin_right = 588.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 4 )
+text = "HORROR SHIP TASK"
 align = 1
 valign = 1
 
 [node name="Label2" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 35.0
-margin_right = 159.0
-margin_bottom = 49.0
+margin_top = 49.0
+margin_right = 588.0
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 4 )
 text = "MIX AND GAME JAM 2020"
 align = 1
 valign = 1

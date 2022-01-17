@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=1]
+[ext_resource path="res://Assets/Fonts/GameFont3D.tres" type="DynamicFont" id=2]
+
+[node name="SpatialGameName" type="RigidBody2D"]
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="SpatialGameNameLetter" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="."]
