@@ -33,24 +33,27 @@ __meta__ = {
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="XionLeakPlanet" parent="Planets" instance=ExtResource( 2 )]
-position = Vector2( 908, 1040 )
+position = Vector2( 1052, 968 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="HorrorShipTaskPlanet" parent="Planets" instance=ExtResource( 6 )]
-position = Vector2( -568, 1605 )
+position = Vector2( -464, 1765 )
 scale = Vector2( 1.5, 1.5 )
+PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHorrorShipTask.tscn"
 
 [node name="HauntedDreamPlanet" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 3180, -7 )
+position = Vector2( 2220, -231 )
+scale = Vector2( 1.5, 1.5 )
+PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHauntedDream.tscn"
+
+[node name="ColorSmasherPlanet" parent="Planets" instance=ExtResource( 4 )]
+position = Vector2( 2407, 1560 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="DeveloperPlanet" parent="Planets" instance=ExtResource( 5 )]
-position = Vector2( -474, -760 )
-scale = Vector2( 2.5, 2.5 )
-
-[node name="ColorSmasherPlanet" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 3407, 2040 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( -465, -492 )
+scale = Vector2( 2, 2 )
+PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialDeveloper.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 711.816, 317.604 )

@@ -7,6 +7,7 @@
 [node name="SpatialObject" type="RigidBody2D"]
 mass = 51.0204
 physics_material_override = ExtResource( 3 )
+gravity_scale = 0.0
 continuous_cd = 1
 linear_damp = 0.0
 angular_damp = 0.0

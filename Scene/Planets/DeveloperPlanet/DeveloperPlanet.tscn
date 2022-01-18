@@ -163,7 +163,7 @@ script = ExtResource( 3 )
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 15
+frame = 17
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
@@ -177,35 +177,42 @@ mouse_filter = 2
 mouse_default_cursor_shape = 2
 
 [node name="VBoxContainer" parent="PlanetInfosContainer/HBoxContainer" index="0"]
+margin_left = 0.0
+margin_right = 846.0
+margin_bottom = 241.0
 mouse_filter = 2
 mouse_default_cursor_shape = 2
 
 [node name="Label" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 846.0
+margin_bottom = 45.0
 custom_fonts/font = ExtResource( 4 )
 text = "DRUCKES Lucas"
 
 [node name="Label2" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 49.0
+margin_right = 846.0
+margin_bottom = 94.0
 custom_fonts/font = ExtResource( 4 )
 text = "C++ / C#"
 
 [node name="Label3" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="2"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 98.0
+margin_right = 846.0
+margin_bottom = 143.0
 custom_fonts/font = ExtResource( 4 )
 text = "HTML, JS, PHASER3, CSS, PHP, SQL"
 
 [node name="Label4" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="3"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 147.0
+margin_right = 846.0
+margin_bottom = 192.0
 custom_fonts/font = ExtResource( 4 )
 text = "GODOT, UNREAL, UNITY"
 
 [node name="Label5" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="4"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 196.0
+margin_right = 846.0
+margin_bottom = 241.0
 custom_fonts/font = ExtResource( 4 )
 text = "LUDUS ACADEMIE"

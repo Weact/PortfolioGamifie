@@ -163,7 +163,7 @@ script = ExtResource( 3 )
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 4
+frame = 21
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
