@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ResetTuto.png-6afd6afb618e4c7b6733a645661cb2a7.stex"
+path="res://.import/ResetTuto.png-27b4c1072d540e9156b33e33451fe06b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ResetTuto.png"
-dest_files=[ "res://.import/ResetTuto.png-6afd6afb618e4c7b6733a645661cb2a7.stex" ]
+source_file="res://Tutos/ResetTuto.png"
+dest_files=[ "res://.import/ResetTuto.png-27b4c1072d540e9156b33e33451fe06b.stex" ]
 
 [params]
 

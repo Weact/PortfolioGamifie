@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://ResetTuto.png" type="Texture" id=1]
+[ext_resource path="res://Tutos/ResetTuto.png" type="Texture" id=1]
 
 [node name="TutoReset" type="Sprite"]
 scale = Vector2( 0.6, 0.6 )
