@@ -14,6 +14,11 @@ var SpatialPlanetGameDescriptionArray : Array = []
 onready var PlanetArea : Area2D = get_node("PlanetShape")
 onready var PlanetInformations : Node2D = get_node("PlanetInfosContainer")
 
+export var PlanetGameNetworksPath : String
+var PlanetGameNetworksScene : PackedScene = null
+
+var SpatialPlanetGameNetworksArray : Array = []
+
 #### ACCESSORS ####
 
 #### BUILT-IN ####
@@ -21,6 +26,7 @@ onready var PlanetInformations : Node2D = get_node("PlanetInfosContainer")
 func _ready() -> void:
 	if PlanetGameNamePath != "": PlanetGameNameScene = load(PlanetGameNamePath)
 	if PlanetGameDescriptionPath != "": PlanetGameDescriptionScene = load(PlanetGameDescriptionPath)
+	if PlanetGameNetworksPath != "": PlanetGameNetworksScene = load(PlanetGameNetworksPath)
 	
 	var __ = PlanetArea.connect("body_entered", self, "_on_body_entered")
 
@@ -38,7 +44,7 @@ func create_spatial_planet_game_name() -> void:
 	if PlanetGameNameScene != null:
 		var spatial_instance = PlanetGameNameScene.instance()
 		get_parent().call_deferred("add_child", spatial_instance)
-		spatial_instance.set_position(self.get_position())
+		spatial_instance.set_position(get_position())
 		SpatialPlanetGameNamesArray.append(spatial_instance)
 		destroy_first_spatial_planet_game_name()
 
@@ -48,11 +54,25 @@ func destroy_first_spatial_planet_game_name() -> void:
 			SpatialPlanetGameNamesArray.pop_at(0)
 			first_spatial.queue_free()
 
+func create_spatial_networks() -> void:
+	if PlanetGameNetworksPath != null:
+		var spatial_networks_game = PlanetGameNetworksScene.instance()
+		get_parent().call_deferred("add_child", spatial_networks_game)
+		spatial_networks_game.set_position(get_position())
+		SpatialPlanetGameNetworksArray.append(spatial_networks_game)
+		destroy_first_spatial_planet_game_networks()
+
+func destroy_first_spatial_planet_game_networks() -> void:
+	if SpatialPlanetGameNetworksArray.size () > 1:
+		var first_networks_spatial = SpatialPlanetGameNetworksArray.front()
+		SpatialPlanetGameNetworksArray.pop_at(0)
+		first_networks_spatial.queue_free()
+
 func create_spatial_game_description() -> void:
 	if PlanetGameDescriptionScene != null:
 		var spatial_description_instance = PlanetGameDescriptionScene.instance()
 		get_parent().call_deferred("add_child", spatial_description_instance)
-		spatial_description_instance.set_position(self.get_position())
+		spatial_description_instance.set_position(get_position())
 		SpatialPlanetGameDescriptionArray.append(spatial_description_instance)
 		destroy_first_spatial_planet_game_description()
 
@@ -73,3 +93,4 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 #		show_planet_hud()
 		create_spatial_planet_game_name()
 		create_spatial_game_description()
+		create_spatial_networks()

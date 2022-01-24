@@ -27,6 +27,14 @@ func create_spatial_game_description() -> void:
 		SpatialPlanetGameDescriptionArray.append(spatial_description_instance)
 		destroy_first_spatial_planet_game_description()
 
+func create_spatial_networks() -> void:
+	if PlanetGameNetworksPath != null:
+		var spatial_networks_game = PlanetGameNetworksScene.instance()
+		get_parent().call_deferred("add_child", spatial_networks_game)
+		spatial_networks_game.set_position(Vector2(self.get_position().x - 1000, self.get_position().y - 300))
+		SpatialPlanetGameNetworksArray.append(spatial_networks_game)
+		destroy_first_spatial_planet_game_networks()
+
 #### INPUTS ####
 
 #### SIGNAL RESPONSES ####

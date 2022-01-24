@@ -138,6 +138,7 @@ scale = Vector2( 1.5, 1.5 )
 [node name="DeveloperPlanet" parent="Planets" instance=ExtResource( 5 )]
 position = Vector2( -1024, -640 )
 scale = Vector2( 3, 3 )
+PlanetGameNetworksPath = "res://Scene/Networks/Developer/DeveloperNetworks.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, -25 )
@@ -158,9 +159,11 @@ position = Vector2( 0, -28 )
 shape = SubResource( 1 )
 
 [node name="TutoMove" parent="Tuto" instance=ExtResource( 9 )]
+modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( -248, 0 )
 
 [node name="TutoReset" parent="Tuto" instance=ExtResource( 8 )]
+modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( 256, 0 )
 
 [node name="AsteroidsPaths" type="Node" parent="."]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Asteroids.png-15f24507a5639c3c8f8f17bbd786b052.stex"
+path="res://.import/Twitter.png-49ec27b1215a87fdbe164aef2f02a0d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Asteroids.png"
-dest_files=[ "res://.import/Asteroids.png-15f24507a5639c3c8f8f17bbd786b052.stex" ]
+source_file="res://Scene/Networks/Twitter.png"
+dest_files=[ "res://.import/Twitter.png-49ec27b1215a87fdbe164aef2f02a0d2.stex" ]
 
 [params]
 
