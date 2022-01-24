@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Fonts/GameFont3D.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=2]
+[ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+font_data = ExtResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.5, 14.5 )
+extents = Vector2( 37.5, 38.5 )
 
-[node name="HorrorShipTask" type="Node2D"]
+[node name="SpatialDeveloper" type="Node2D"]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -14,23 +18,22 @@ __meta__ = {
 
 [node name="FirstName" type="Node2D" parent="."]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="L" type="RigidBody2D" parent="FirstName"]
+position = Vector2( 1, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
 [node name="SpatialGameNameLetter" type="Label" parent="FirstName/L"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "L"
 align = 1
 valign = 1
@@ -40,11 +43,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="FirstName/L"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="U" type="RigidBody2D" parent="FirstName"]
-position = Vector2( 32, 0 )
+position = Vector2( 80, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -55,7 +58,7 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="FirstName/U"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "U"
 align = 1
 valign = 1
@@ -65,11 +68,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="FirstName/U"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="C" type="RigidBody2D" parent="FirstName"]
-position = Vector2( 64, 0 )
+position = Vector2( 160, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -80,7 +83,7 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="FirstName/C"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "C"
 align = 1
 valign = 1
@@ -90,11 +93,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="FirstName/C"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="A" type="RigidBody2D" parent="FirstName"]
-position = Vector2( 96, 0 )
+position = Vector2( 240, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -105,7 +108,7 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="FirstName/A"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "A"
 align = 1
 valign = 1
@@ -115,11 +118,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="FirstName/A"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="S" type="RigidBody2D" parent="FirstName"]
-position = Vector2( 128, 0 )
+position = Vector2( 320, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -130,7 +133,7 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="FirstName/S"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "S"
 align = 1
 valign = 1
@@ -140,18 +143,16 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="FirstName/S"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="LastName" type="Node2D" parent="."]
-position = Vector2( -8, 32 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="D" type="RigidBody2D" parent="LastName"]
-position = Vector2( 8, 0 )
+position = Vector2( 0, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -162,8 +163,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/D"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "d"
+custom_fonts/font = SubResource( 2 )
+text = "D"
 align = 1
 valign = 1
 autowrap = true
@@ -172,11 +173,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/D"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="R" type="RigidBody2D" parent="LastName"]
-position = Vector2( 40, 0 )
+position = Vector2( 80, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -187,8 +188,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/R"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "r"
+custom_fonts/font = SubResource( 2 )
+text = "R"
 align = 1
 valign = 1
 autowrap = true
@@ -197,11 +198,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/R"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="U" type="RigidBody2D" parent="LastName"]
-position = Vector2( 72, 0 )
+position = Vector2( 160, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -212,8 +213,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/U"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "u"
+custom_fonts/font = SubResource( 2 )
+text = "U"
 align = 1
 valign = 1
 autowrap = true
@@ -222,11 +223,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/U"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="C" type="RigidBody2D" parent="LastName"]
-position = Vector2( 104, 0 )
+position = Vector2( 240, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -237,8 +238,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/C"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "c"
+custom_fonts/font = SubResource( 2 )
+text = "C"
 align = 1
 valign = 1
 autowrap = true
@@ -247,11 +248,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/C"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="K" type="RigidBody2D" parent="LastName"]
-position = Vector2( 136, 0 )
+position = Vector2( 320, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -262,8 +263,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/K"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "k"
+custom_fonts/font = SubResource( 2 )
+text = "K"
 align = 1
 valign = 1
 autowrap = true
@@ -272,11 +273,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/K"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="E" type="RigidBody2D" parent="LastName"]
-position = Vector2( 168, 0 )
+position = Vector2( 400, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -287,8 +288,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/E"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "e"
+custom_fonts/font = SubResource( 2 )
+text = "E"
 align = 1
 valign = 1
 autowrap = true
@@ -297,11 +298,11 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/E"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )
 
 [node name="S" type="RigidBody2D" parent="LastName"]
-position = Vector2( 200, 0 )
+position = Vector2( 480, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
@@ -312,8 +313,8 @@ __meta__ = {
 [node name="SpatialGameNameLetter" type="Label" parent="LastName/S"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "s"
+custom_fonts/font = SubResource( 2 )
+text = "S"
 align = 1
 valign = 1
 autowrap = true
@@ -322,5 +323,5 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="LastName/S"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 15.5, 183.5 )
 shape = SubResource( 1 )

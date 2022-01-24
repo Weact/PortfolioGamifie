@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=1]
+[ext_resource path="res://Scene/GameLabel/GameLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 296, 120 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 264, 96 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 208, 116 )
+
+[node name="DeveloperDescription" type="Node2D"]
+
+[node name="developerinformation" type="Node2D" parent="."]
+position = Vector2( -960, 0 )
+
+[node name="Description1" type="RigidBody2D" parent="developerinformation"]
+mass = 5.85306
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="developerinformation/Description1"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_right = 592.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameLabel" parent="developerinformation/Description1" instance=ExtResource( 2 )]
+text = "game developer
+studied at
+ludus academie
+strasbourg 2018-2023
+bachelor degree"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="developerinformation/Description1"]
+position = Vector2( 296, 120 )
+shape = SubResource( 1 )
+
+[node name="developerlanguages" type="Node2D" parent="."]
+position = Vector2( 320, 0 )
+
+[node name="Description2" type="RigidBody2D" parent="developerlanguages"]
+mass = 5.85306
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="developerlanguages/Description2"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_right = 528.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="developerlanguages/Description2"]
+position = Vector2( 264, 96 )
+shape = SubResource( 3 )
+
+[node name="GameLabel" parent="developerlanguages/Description2" instance=ExtResource( 2 )]
+margin_right = 519.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 4 )
+text = "Languages :
+C++ ; C#
+HTML ; JS ; CSS ; PHP
+BOOTSTRAP ; PHASER"
+
+[node name="developerengines" type="Node2D" parent="."]
+position = Vector2( -208, 408 )
+
+[node name="Description3" type="RigidBody2D" parent="developerengines"]
+mass = 5.85306
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="developerengines/Description3"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_right = 416.0
+margin_bottom = 232.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="developerengines/Description3"]
+position = Vector2( 208, 116 )
+shape = SubResource( 2 )
+
+[node name="GameLabel" parent="developerengines/Description3" instance=ExtResource( 2 )]
+text = "Engines :
+godot engine
+unreal engine 4
+unity
+construct"

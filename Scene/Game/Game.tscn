@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scene/Game/GameBackground1024.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Planets/XionLeakPlanet/XionLeakPlanet.tscn" type="PackedScene" id=2]
@@ -7,6 +7,67 @@
 [ext_resource path="res://Scene/Planets/DeveloperPlanet/DeveloperPlanet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/Planets/HorrorShipTaskPlanet/HorrorShipTaskPlanet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scene/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TutoReset.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TutoMove.tscn" type="PackedScene" id=9]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node
+
+onready var area_remove_tuto : Area2D = get_node(\"TutoArea\")
+
+#### ACCESSORS ####
+
+#### BUILT-IN ####
+
+func _ready() -> void:
+	var __ = area_remove_tuto.connect(\"body_exited\", self, \"_on_body_exited_tuto_area\")
+	__ = area_remove_tuto.connect(\"body_entered\", self, \"_on_body_entered_tuto_area\")
+
+#### VIRTUALS ####
+
+#### LOGIC ####
+
+#### INPUTS ####
+
+#### SIGNAL RESPONSES ####
+func _on_body_exited_tuto_area(body: PhysicsBody2D) -> void:
+	if is_instance_valid(body) and body is Player:
+		$AnimationPlayer.play(\"hide\")
+
+func _on_body_entered_tuto_area(body: PhysicsBody2D) -> void:
+	if is_instance_valid(body) and body is Player:
+		$AnimationPlayer.play_backwards(\"hide\")
+"
+
+[sub_resource type="Animation" id=3]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TutoReset:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.607843 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TutoMove:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.607843 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 500, 328 )
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -33,28 +94,47 @@ __meta__ = {
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="XionLeakPlanet" parent="Planets" instance=ExtResource( 2 )]
-position = Vector2( 1052, 968 )
+position = Vector2( -1024, 832 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="HorrorShipTaskPlanet" parent="Planets" instance=ExtResource( 6 )]
-position = Vector2( -464, 1765 )
+position = Vector2( 0, 1360 )
 scale = Vector2( 1.5, 1.5 )
-PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHorrorShipTask.tscn"
 
 [node name="HauntedDreamPlanet" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 2220, -231 )
+position = Vector2( 1264, -596 )
 scale = Vector2( 1.5, 1.5 )
-PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHauntedDream.tscn"
 
 [node name="ColorSmasherPlanet" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 2407, 1560 )
+position = Vector2( 1272, 832 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="DeveloperPlanet" parent="Planets" instance=ExtResource( 5 )]
-position = Vector2( -465, -492 )
-scale = Vector2( 2, 2 )
-PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialDeveloper.tscn"
+position = Vector2( -1024, -640 )
+scale = Vector2( 3, 3 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 711.816, 317.604 )
+position = Vector2( 0, -25 )
+rotation = -1.57079
+z_index = 5
 acceleration = 500
+
+[node name="Tuto" type="Node" parent="."]
+script = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tuto"]
+anims/hide = SubResource( 3 )
+
+[node name="TutoReset" parent="Tuto" instance=ExtResource( 8 )]
+modulate = Color( 1, 1, 1, 0.607843 )
+position = Vector2( 176, 0 )
+z_index = -1
+
+[node name="TutoMove" parent="Tuto" instance=ExtResource( 9 )]
+modulate = Color( 1, 1, 1, 0.607843 )
+position = Vector2( -176, 0 )
+
+[node name="TutoArea" type="Area2D" parent="Tuto"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/TutoArea"]
+shape = SubResource( 1 )

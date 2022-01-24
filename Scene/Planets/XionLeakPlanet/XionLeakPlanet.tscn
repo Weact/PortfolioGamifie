@@ -161,10 +161,11 @@ tracks/0/keys = {
 [node name="XionLeakPlanet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialXionLeak.tscn"
+PlanetGameDescriptionPath = "res://Scene/SpatialObjects/SpatialPlanetDescriptions/XionLeakDescription.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 17
+frame = 22
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]

@@ -160,10 +160,12 @@ tracks/0/keys = {
 
 [node name="HorrorShipTaskPlanet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHorrorShipTask.tscn"
+PlanetGameDescriptionPath = "res://Scene/SpatialObjects/SpatialPlanetDescriptions/HorrorShipTaskDescription.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 21
+frame = 24
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]

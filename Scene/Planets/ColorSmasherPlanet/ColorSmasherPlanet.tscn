@@ -139,7 +139,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=27]
-radius = 368.776
+radius = 240.674
 
 [sub_resource type="Animation" id=28]
 length = 0.5
@@ -160,10 +160,11 @@ tracks/0/keys = {
 [node name="ColorSmasherPlanet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialColorSmasher.tscn"
+PlanetGameDescriptionPath = "res://Scene/SpatialObjects/SpatialPlanetDescriptions/ColorSmasherDescription.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 17
+frame = 24
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
@@ -179,13 +180,13 @@ mouse_filter = 2
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 1016.0
+margin_bottom = 120.0
 custom_fonts/font = ExtResource( 4 )
 text = "Color Smasher"
 
 [node name="Label2" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 1080.0
+margin_bottom = 120.0
 custom_fonts/font = ExtResource( 4 )
 text = "School Project"

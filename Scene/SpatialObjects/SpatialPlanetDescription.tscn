@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=1]
+[ext_resource path="res://Scene/GameLabel/GameLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="SpatialPlanetDescription" type="RigidBody2D"]
+mass = 5.85
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="GameLabel" parent="." instance=ExtResource( 2 )]
+custom_fonts/font = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

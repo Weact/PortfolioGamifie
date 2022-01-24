@@ -4,7 +4,7 @@
 [ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.5, 14.5 )
+extents = Vector2( 31.25, 31.25 )
 
 [node name="HorrorShipTask" type="Node2D"]
 __meta__ = {
@@ -19,7 +19,6 @@ physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -36,16 +35,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Horror/H"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16.75, 184.75 )
 shape = SubResource( 1 )
 
 [node name="O" type="RigidBody2D" parent="Horror"]
-position = Vector2( 30, 0 )
+position = Vector2( 80, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -62,16 +60,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Horror/O"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="R" type="RigidBody2D" parent="Horror"]
-position = Vector2( 60, 0 )
+position = Vector2( 160, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -88,16 +85,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Horror/R"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="R2" type="RigidBody2D" parent="Horror"]
-position = Vector2( 90, 0 )
+position = Vector2( 240, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -114,16 +110,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Horror/R2"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="O2" type="RigidBody2D" parent="Horror"]
-position = Vector2( 120, 0 )
+position = Vector2( 320, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -140,16 +135,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Horror/O2"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="R3" type="RigidBody2D" parent="Horror"]
-position = Vector2( 150, 0 )
+position = Vector2( 400, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -166,19 +160,18 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Horror/R3"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="Ship" type="Node2D" parent="."]
 position = Vector2( -8, 0 )
 
 [node name="S" type="RigidBody2D" parent="Ship"]
-position = Vector2( -33, 32 )
+position = Vector2( 88, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -195,16 +188,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Ship/S"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="H" type="RigidBody2D" parent="Ship"]
-position = Vector2( -3, 32 )
+position = Vector2( 168, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -221,16 +213,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Ship/H"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="I" type="RigidBody2D" parent="Ship"]
-position = Vector2( 27, 32 )
+position = Vector2( 248, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -247,16 +238,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Ship/I"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="P" type="RigidBody2D" parent="Ship"]
-position = Vector2( 57, 32 )
+position = Vector2( 328, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -273,19 +263,18 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Ship/P"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="Task" type="Node2D" parent="."]
 position = Vector2( 8, 0 )
 
 [node name="T" type="RigidBody2D" parent="Task"]
-position = Vector2( 92, 32 )
+position = Vector2( 72, 160 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -302,16 +291,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Task/T"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="A" type="RigidBody2D" parent="Task"]
-position = Vector2( 122, 32 )
+position = Vector2( 152, 160 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -328,16 +316,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Task/A"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="S" type="RigidBody2D" parent="Task"]
-position = Vector2( 152, 32 )
+position = Vector2( 232, 160 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -354,16 +341,15 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Task/S"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )
 
 [node name="K" type="RigidBody2D" parent="Task"]
-position = Vector2( 182, 32 )
+position = Vector2( 312, 160 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -380,5 +366,5 @@ __meta__ = {
 }
 
 [node name="SpatialGameNameLetterCollision" type="CollisionShape2D" parent="Task/K"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16, 184 )
 shape = SubResource( 1 )

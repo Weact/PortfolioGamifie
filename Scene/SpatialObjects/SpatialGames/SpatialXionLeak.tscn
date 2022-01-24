@@ -4,7 +4,7 @@
 [ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.5, 14.5 )
+extents = Vector2( 32.375, 31.375 )
 
 [node name="SpatialXionLeak" type="Node2D"]
 __meta__ = {
@@ -15,9 +15,6 @@ __meta__ = {
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Label" type="Label" parent="X"]
 margin_right = 40.0
@@ -28,24 +25,22 @@ align = 1
 valign = 1
 autowrap = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="X"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 16.375, 183.375 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="I" type="RigidBody2D" parent="."]
-position = Vector2( 32, 0 )
+position = Vector2( 80, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -63,19 +58,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="I"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 19, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="O" type="RigidBody2D" parent="."]
-position = Vector2( 64, 0 )
+position = Vector2( 160, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -93,19 +87,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="O"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 19, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="N" type="RigidBody2D" parent="."]
-position = Vector2( 96, 0 )
+position = Vector2( 240, 0 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -123,19 +116,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="N"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 19, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="L" type="RigidBody2D" parent="."]
-position = Vector2( 144, 0 )
+position = Vector2( 0, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -153,19 +145,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="L"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 20, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="E" type="RigidBody2D" parent="."]
-position = Vector2( 176, 0 )
+position = Vector2( 80, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -183,19 +174,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="E"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 19, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="A" type="RigidBody2D" parent="."]
-position = Vector2( 208, 0 )
+position = Vector2( 160, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -213,19 +203,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 19, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="K" type="RigidBody2D" parent="."]
-position = Vector2( 240, 0 )
+position = Vector2( 240, 80 )
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 continuous_cd = 1
 __meta__ = {
-"_edit_lock_": true,
 "_editor_description_": ""
 }
 
@@ -243,7 +232,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="K"]
-position = Vector2( 18.5, 22.5 )
+position = Vector2( 19, 184 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true

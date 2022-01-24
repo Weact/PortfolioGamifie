@@ -159,10 +159,12 @@ tracks/0/keys = {
 
 [node name="HauntedDreamPlanet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHauntedDream.tscn"
+PlanetGameDescriptionPath = "res://Scene/SpatialObjects/SpatialPlanetDescriptions/HauntedDreamDescription.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 19
+frame = 8
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
@@ -178,13 +180,13 @@ mouse_filter = 2
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 1016.0
+margin_bottom = 120.0
 custom_fonts/font = ExtResource( 4 )
 text = "Haunted Dream"
 
 [node name="Label2" type="Label" parent="PlanetInfosContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 1512.0
+margin_bottom = 120.0
 custom_fonts/font = ExtResource( 4 )
 text = "GLOBAL GAME JAM 2021"

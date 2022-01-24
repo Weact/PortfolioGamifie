@@ -16,7 +16,10 @@ var movement = Vector2.ZERO
 #### BUILT-IN ####
 func _physics_process(delta: float) -> void:
 	movements_handler(delta)
-	move()
+	move(delta)
+	
+	for i in get_slide_count():
+		print(i)
 
 #### LOGIC ####
 
@@ -32,7 +35,7 @@ func movements_handler(delta) -> void:
 		speed = 0
 		reactors(false)
 
-func move() -> void:
+func move(_delta) -> void:
 	movement = position.direction_to(destination) * speed
 	move_direction = rad2deg(destination.angle_to_point(position))
 	
@@ -46,6 +49,13 @@ func reactors(activated: bool) -> void:
 			for reactor in $Reactors.get_children():
 				reactor.emitting = activated
 
+func reset_position() -> void:
+	$AnimationPlayer.get_animation("reset").track_set_key_value(0, 0, get_position())
+	$AnimationPlayer.get_animation("reset").track_set_key_value(0, 1, Vector2(0,0))
+	$AnimationPlayer.play("reset")
+	
+	look_at(Vector2(0,0))
+
 #### VIRTUALS ####
 
 #### INPUTS ####
@@ -53,7 +63,9 @@ func reactors(activated: bool) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed('move_player'):
 		moving = true
-	if event.is_action_released('move_player'):
+	elif event.is_action_released('move_player'):
 		moving = false
+	elif event.is_action_pressed('reset'):
+		reset_position()
 
 #### SIGNAL RESPONSES ####

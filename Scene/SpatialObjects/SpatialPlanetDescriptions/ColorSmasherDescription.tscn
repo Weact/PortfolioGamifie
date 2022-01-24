@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=1]
+[ext_resource path="res://Scene/GameLabel/GameLabel.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 280, 72 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 296, 120 )
+
+[node name="ColorSmasherDescription" type="Node2D"]
+
+[node name="Description1" type="RigidBody2D" parent="."]
+position = Vector2( -768, 48 )
+mass = 5.85306
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+
+[node name="Panel" type="Panel" parent="Description1"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -8.0
+margin_right = 552.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameLabel" parent="Description1" instance=ExtResource( 2 )]
+text = "GAME DESIGN PROJECT
+LUDUS ACADEMIE
+SOLO PROJECT"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Description1"]
+position = Vector2( 272, 72 )
+shape = SubResource( 1 )
+
+[node name="Description2" type="RigidBody2D" parent="."]
+position = Vector2( 232, 0 )
+mass = 5.85306
+physics_material_override = ExtResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 1
+
+[node name="Panel" type="Panel" parent="Description2"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -16.0
+margin_right = 576.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameLabel" parent="Description2" instance=ExtResource( 2 )]
+text = "pc (windows)
+itch.io
+GODOT ENGINE
+singleplayer
+2D, PIXEL ART, PUZZLE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Description2"]
+position = Vector2( 280, 120 )
+shape = SubResource( 2 )
