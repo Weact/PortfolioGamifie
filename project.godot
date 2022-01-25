@@ -96,6 +96,10 @@ config/name="Portfolio Game"
 run/main_scene="res://Scene/Menus/ScreenTitle/ScreenTitleMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+EVENTS="*res://Global/EVENTS.gd"
+
 [debug]
 
 settings/fps/force_fps=60

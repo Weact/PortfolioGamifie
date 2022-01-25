@@ -13,6 +13,7 @@ var SpatialPlanetGameDescriptionArray : Array = []
 
 onready var PlanetArea : Area2D = get_node("PlanetShape")
 onready var PlanetInformations : Node2D = get_node("PlanetInfosContainer")
+onready var animation_node : AnimationPlayer = get_node("AnimationPlayer")
 
 export var PlanetGameNetworksPath : String
 var PlanetGameNetworksScene : PackedScene = null
@@ -29,6 +30,7 @@ func _ready() -> void:
 	if PlanetGameNetworksPath != "": PlanetGameNetworksScene = load(PlanetGameNetworksPath)
 	
 	var __ = PlanetArea.connect("body_entered", self, "_on_body_entered")
+	__ = PlanetArea.connect("body_exited", self, "_on_body_exited")
 
 #### VIRTUALS ####
 
@@ -90,7 +92,15 @@ func destroy_first_spatial_planet_game_description() -> void:
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if is_instance_valid(body) and body.is_class("Player"):
-#		show_planet_hud()
 		create_spatial_planet_game_name()
 		create_spatial_game_description()
 		create_spatial_networks()
+		
+		if animation_node.has_animation("display_image"):
+			animation_node.set_speed_scale(1.0)
+			animation_node.play("display_image")
+
+func _on_body_exited(body: PhysicsBody2D) -> void:
+	if body is Player and animation_node.has_animation("display_image"):
+		animation_node.set_speed_scale(3.0)
+		animation_node.play_backwards("display_image")

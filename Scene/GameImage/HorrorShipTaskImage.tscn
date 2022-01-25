@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/GameImage/XionLeakImage.tscn" type="PackedScene" id=1]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.243137, 0.109804, 0.121569, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0, 0, 0, 0.784314 )
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color( 0.14902, 0.00784314, 0, 1 )
+shadow_size = 100
+shadow_offset = Vector2( 10, 10 )
+anti_aliasing_size = 1.0
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/HorrorShipTask.png-abc534f6e4462ebd71aceb5ccab54759.stex"
+
+[node name="HorrorShipTaskImage" instance=ExtResource( 1 )]
+margin_right = 1152.0
+margin_bottom = 960.0
+rect_pivot_offset = Vector2( 576, 480 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 576, 480 )
+scale = Vector2( 3, 3 )
+texture = SubResource( 2 )
