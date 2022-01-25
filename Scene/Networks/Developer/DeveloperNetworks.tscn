@@ -110,6 +110,8 @@ tracks/1/keys = {
 
 [node name="DeveloperNetworks" type="Node2D"]
 script = ExtResource( 1 )
+itchio_achievement_name = "achievement_developer_itchio"
+twitter_achievement_name = "achievement_developer_twitter"
 itch_link = "https://weact.itch.io/"
 twitter_link = "https://twitter.com/weacct"
 

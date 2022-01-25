@@ -3,6 +3,8 @@ class_name Planet
 func is_class(value: String): return value == "Planet" or .is_class(value)
 func get_class() -> String: return "Planet"
 
+export(String) var achievement_name = ""
+
 export var PlanetGameNamePath : String
 var PlanetGameNameScene : PackedScene = null
 var SpatialPlanetGameNamesArray : Array = []
@@ -92,6 +94,9 @@ func destroy_first_spatial_planet_game_description() -> void:
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if is_instance_valid(body) and body.is_class("Player"):
+		if owner.get_name() == "Game":
+			owner.unlock_game_achievement(achievement_name)
+		
 		create_spatial_planet_game_name()
 		create_spatial_game_description()
 		create_spatial_networks()

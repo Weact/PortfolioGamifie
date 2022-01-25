@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "NetworkBase",
 "class": "ColorSmasherNetworks",
 "language": "GDScript",
 "path": "res://Scene/Networks/ColorSmasher/ColorSmasherNetworks.gd"
@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scene/Planets/ColorSmasherPlanet/ColorSmasherPlanet.gd"
 }, {
-"base": "Node2D",
+"base": "NetworkBase",
 "class": "DeveloperNetworks",
 "language": "GDScript",
 "path": "res://Scene/Networks/Developer/DeveloperNetworks.gd"
@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://Scene/Planets/DeveloperPlanet/DeveloperPlanet.gd"
 }, {
 "base": "Node2D",
+"class": "Game",
+"language": "GDScript",
+"path": "res://Scene/Game/Game.gd"
+}, {
+"base": "NetworkBase",
 "class": "HauntedDreamNetwork",
 "language": "GDScript",
 "path": "res://Scene/Networks/HauntedDream/HauntedDreamNetwork.gd"
@@ -39,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scene/Planets/HauntedDreamPlanet/HauntedDreamPlanet.gd"
 }, {
-"base": "Node2D",
+"base": "NetworkBase",
 "class": "HorrorShipTaskNetwork",
 "language": "GDScript",
 "path": "res://Scene/Networks/HorrorShipTask/HorrorShipTaskNetwork.gd"
@@ -48,6 +53,11 @@ _global_script_classes=[ {
 "class": "HorrorShipTaskPlanet",
 "language": "GDScript",
 "path": "res://Scene/Planets/HorrorShipTaskPlanet/HorrorShipTaskPlanet.gd"
+}, {
+"base": "Node",
+"class": "NetworkBase",
+"language": "GDScript",
+"path": "res://Scene/Networks/network.gd"
 }, {
 "base": "Node2D",
 "class": "Planet",
@@ -64,7 +74,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scene/Menus/ScreenTitle/ScreenTitleMenu.gd"
 }, {
-"base": "Node2D",
+"base": "NetworkBase",
 "class": "XionLeakNetwork",
 "language": "GDScript",
 "path": "res://Scene/Networks/XionLeak/XionLeakNetwork.gd"
@@ -79,10 +89,12 @@ _global_script_class_icons={
 "ColorSmasherPlanet": "",
 "DeveloperNetworks": "",
 "DeveloperPlanet": "",
+"Game": "",
 "HauntedDreamNetwork": "",
 "HauntedDreamPlanet": "",
 "HorrorShipTaskNetwork": "",
 "HorrorShipTaskPlanet": "",
+"NetworkBase": "",
 "Planet": "",
 "Player": "",
 "ScreenTitleMenu": "",

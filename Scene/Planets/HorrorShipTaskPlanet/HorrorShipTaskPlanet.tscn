@@ -202,12 +202,13 @@ tracks/0/keys = {
 [node name="HorrorShipTaskPlanet" instance=ExtResource( 1 )]
 rotation = 0.00672936
 script = ExtResource( 3 )
+achievement_name = "achievement_hst"
 PlanetGameNamePath = "res://Scene/SpatialObjects/SpatialGames/SpatialHorrorShipTask.tscn"
 PlanetGameDescriptionPath = "res://Scene/SpatialObjects/SpatialPlanetDescriptions/HorrorShipTaskDescription.tscn"
+PlanetGameNetworksPath = "res://Scene/Networks/HorrorShipTask/HorrorShipTaskNetwork.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 22
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]

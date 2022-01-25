@@ -116,6 +116,7 @@ tracks/1/keys = {
 
 [node name="ColorSmasherNetwork" type="Node2D"]
 script = ExtResource( 1 )
+itchio_achievement_name = "achievement_colorsmasher_itchio"
 itch_link = "https://weact.itch.io/color-smasher"
 
 [node name="ItchIO" type="Sprite" parent="."]

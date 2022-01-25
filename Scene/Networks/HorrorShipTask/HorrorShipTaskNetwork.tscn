@@ -116,6 +116,7 @@ tracks/1/keys = {
 
 [node name="HorrorShipTaskNetwork" type="Node2D"]
 script = ExtResource( 1 )
+itchio_achievement_name = "achievement_hst_itchio"
 itch_link = "https://weact.itch.io/horror-ship-task"
 
 [node name="ItchIO" type="Sprite" parent="."]

@@ -168,6 +168,8 @@ tracks/1/keys = {
 
 [node name="HauntedDreamNetwork" type="Node2D"]
 script = ExtResource( 1 )
+itchio_achievement_name = "achievement_haunteddream_itchio"
+global_achievement_name = "achievement_haunteddream_global"
 itch_link = "https://weact.itch.io/haunted-dream"
 global_link = "https://globalgamejam.org/2021/games/haunted-dream-2"
 

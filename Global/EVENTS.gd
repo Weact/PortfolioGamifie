@@ -2,28 +2,146 @@ extends Node
 func is_class(value: String): return value == "EVENTS" or .is_class(value)
 func get_class() -> String: return "EVENTS"
 
-signal xionleak_discovered()
-const achievement_xionleak : String = "UNLOCKED: DISCOVER XION LEAK"
-signal xionleak_xionleak_twitter()
-const achievement_xionleak_twitter : String = "UNLOCKED: VISIT XION LEAK'S TWITTER"
+#### VARS ####
 
-signal colorsmasher_discovered()
-const achievement_colorsmasher : String = "UNLOCKED: DISCOVER COLOR SMASHER"
-signal xionleak_colorsmasher_itchio()
-const achievement_colorsmasher_itchio : String = "UNLOCKED: VISIT COLOR SMASHER'S ITCH.IO"
+var ach_label : Label = null
+var ach_player : AnimationPlayer = null
+var ach_anim_name : String = ""
 
-const achievement_developer : String = "UNLOCKED: LEARN MORE ABOUT THE DEVELOPER"
-const achievement_developer_twitter : String = "UNLOCKED: VISIT DEVELOPER'S TWITTER"
-const achievement_developer_itchio : String = "UNLOCKED: VISIT DEVELOPER'S ITCH.IO"
+var achievements : Dictionary = {
+	#XION LEAK
+	"achievement_xionleak": {
+		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER XION LEAK",
+		"unlocked":false
+	},
+	"achievement_xionleak_twitter": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT XION LEAK'S TWITTER",
+		"unlocked":false
+	},
+	
+	#COLOR SMASHER
+	"achievement_colorsmasher": {
+		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER COLOR SMASHER",
+		"unlocked":false
+	},
+	"achievement_colorsmasher_itchio": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT COLOR SMASHER'S ITCH.IO",
+		"unlocked":false
+	},
+	
+	#DEVELOPER
+	"achievement_developer": {
+		"name":"ACHIEVEMENT UNLOCKED:\nLEARN MORE ABOUT THE DEVELOPER",
+		"unlocked":false
+	},
+	"achievement_developer_twitter": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT DEVELOPER'S TWITTER",
+		"unlocked":false
+	},
+	"achievement_developer_itchio": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT DEVELOPER'S ITCH.IO",
+		"unlocked":false
+	},
+	
+	#HAUNTED DREAM
+	"achievement_haunteddream": {
+		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER HAUNTED DREAM",
+		"unlocked":false
+	},
+	"achievement_haunteddream_itchio": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT HAUNTED DREAM'S ITCH.IO",
+		"unlocked":false
+	},
+	"achievement_haunteddream_global":{
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT HAUNTED DREAM'S GLOBAL GAME JAM",
+		"unlocked":false
+	},
+	
+	#HORROR SHIP TASK
+	"achievement_hst": {
+		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER HORROR SHIP TASK",
+		"unlocked":false
+	},
+	"achievement_hst_itchio": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT HORROR SHIP TASK ITCH.IO",
+		"unlocked":false
+	},
+	
+	#MISCELANIOUS
+	"achievement_all_links_visited": {
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT ALL LINKS AVAILABLE IN THE GAME",
+		"unlocked":false
+	},
+	"achievement_all_planets_discovered": {
+		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER ALL PLANETS IN THE GAME",
+		"unlocked":false
+	},
+	
+	#UNIVERSE
+	"achievement_outside_universe": {
+		"name":"ACHIEVEMENT UNLOCKED:\nUNIVERSE EXPLORED",
+		"unlocked":false
+	}
+}
 
-const achievement_haunteddream : String = "UNLOCKED: DISCOVER HAUNTED DREAM"
-const achievement_haunteddream_itchio : String = "UNLOCKED: VISIT HAUNTED DREAM'S ITCH.IO"
-const achievement_haunteddream_global : String = "UNLOCKED: VISIT HAUNTED DREAM'S GLOBAL GAME JAM"
+#### ACCESSORS ####
 
-const achievement_hst : String = "UNLOCKED: DISCOVER HORROR SHIP TASK"
-const achievement_hst_itchio : String = "UNLOCKED: VISIT HORROR SHIP TASK ITCH.IO"
+func set_achievement(achievement_name : String = "", achievement_value : String = "") -> void:
+	if achievement_exists(achievement_name):
+		achievements[achievement_name].name = achievement_value
+	else:
+		push_error("Tried to modify name of achievement " + achievement_name + " but could not be found")
 
-const achievement_all_links_visited : String = "UNLOCKED: VISIT ALL LINKS AVAILABLE IN THE GAME"
-const achievement_all_planets_discovered : String = "UNLOCKED: DISCOVER ALL PLANETS IN THE GAME"
+func get_achievement(achievement_name : String = "") -> String:
+	if achievement_exists(achievement_name):
+		return achievements.get(achievement_name).name
+	else:
+		return ""
 
-const achievement_outside_universe : String = "UNLOCKED: UNIVERSE EXPLORED"
+func set_achievement_unlocked(achievement_name : String = "", achievement_unlocked_value : bool = false) -> void:
+	if achievement_exists(achievement_name):
+		achievements[achievement_name].unlocked = achievement_unlocked_value
+	else:
+		push_error("Tried to modify unlocked of achievement " + achievement_name + " but could not be found")
+
+func is_achievement_unlocked(achievement_name : String = "") -> bool:
+	if achievement_exists(achievement_name):
+		return achievements[achievement_name].unlocked
+	else:
+		return false
+
+#### BUILT IN ####
+
+#### LOGIC ####
+
+func display_achievements_state() -> void:
+	for ach in achievements:
+		print("KEY: ", ach)
+		print("ACHIEVEMENT: ", get_achievement(ach))
+		print("UNLOCKED: ", is_achievement_unlocked(ach))
+
+func unlock_achievement(ACH_NAME: String = "") -> String:
+	if get_achievement(ACH_NAME) != "":
+		set_achievement_unlocked(ACH_NAME, true)
+		return achievements[ACH_NAME].name
+	else:
+		return ""
+
+func achievement_exists(achievement_name : String = "") -> bool:
+	if achievement_name in achievements:
+		return true
+	else:
+		push_error("Achievement " + achievement_name + " does not exist")
+		return false
+
+func display_achievement(achievement_name : String = "") -> void:
+	if is_instance_valid(ach_label):
+		if achievement_name != "" and not is_achievement_unlocked(achievement_name):
+			ach_label.set_text(unlock_achievement(achievement_name))
+			ach_player.play(ach_anim_name)
+	else:
+		push_error("Tried to display an achievement on a label but it could not be found")
+
+#### VIRTUALS ####
+
+#### SIGNALS ####
