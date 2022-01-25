@@ -55,7 +55,7 @@ func destroy_first_spatial_planet_game_name() -> void:
 			first_spatial.queue_free()
 
 func create_spatial_networks() -> void:
-	if PlanetGameNetworksPath != null:
+	if PlanetGameNetworksPath != null and is_instance_valid(PlanetGameNetworksScene):
 		var spatial_networks_game = PlanetGameNetworksScene.instance()
 		get_parent().call_deferred("add_child", spatial_networks_game)
 		spatial_networks_game.set_position(get_position())

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "ColorSmasherNetworks",
+"language": "GDScript",
+"path": "res://Scene/Networks/ColorSmasher/ColorSmasherNetworks.gd"
+}, {
 "base": "Planet",
 "class": "ColorSmasherPlanet",
 "language": "GDScript",
@@ -24,10 +29,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scene/Planets/DeveloperPlanet/DeveloperPlanet.gd"
 }, {
+"base": "Node2D",
+"class": "HauntedDreamNetwork",
+"language": "GDScript",
+"path": "res://Scene/Networks/HauntedDream/HauntedDreamNetwork.gd"
+}, {
 "base": "Planet",
 "class": "HauntedDreamPlanet",
 "language": "GDScript",
 "path": "res://Scene/Planets/HauntedDreamPlanet/HauntedDreamPlanet.gd"
+}, {
+"base": "Node2D",
+"class": "HorrorShipTaskNetwork",
+"language": "GDScript",
+"path": "res://Scene/Networks/HorrorShipTask/HorrorShipTaskNetwork.gd"
 }, {
 "base": "Planet",
 "class": "HorrorShipTaskPlanet",
@@ -49,20 +64,29 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scene/Menus/ScreenTitle/ScreenTitleMenu.gd"
 }, {
+"base": "Node2D",
+"class": "XionLeakNetwork",
+"language": "GDScript",
+"path": "res://Scene/Networks/XionLeak/XionLeakNetwork.gd"
+}, {
 "base": "Planet",
 "class": "XionLeakPlanet",
 "language": "GDScript",
 "path": "res://Scene/Planets/XionLeakPlanet/XionLeakPlanet.gd"
 } ]
 _global_script_class_icons={
+"ColorSmasherNetworks": "",
 "ColorSmasherPlanet": "",
 "DeveloperNetworks": "",
 "DeveloperPlanet": "",
+"HauntedDreamNetwork": "",
 "HauntedDreamPlanet": "",
+"HorrorShipTaskNetwork": "",
 "HorrorShipTaskPlanet": "",
 "Planet": "",
 "Player": "",
 "ScreenTitleMenu": "",
+"XionLeakNetwork": "",
 "XionLeakPlanet": ""
 }
 

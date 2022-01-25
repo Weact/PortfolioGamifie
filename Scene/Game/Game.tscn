@@ -122,18 +122,22 @@ __meta__ = {
 [node name="XionLeakPlanet" parent="Planets" instance=ExtResource( 2 )]
 position = Vector2( -1024, 832 )
 scale = Vector2( 1.5, 1.5 )
+PlanetGameNetworksPath = "res://Scene/Networks/XionLeak/XionLeakNetwork.tscn"
 
 [node name="HorrorShipTaskPlanet" parent="Planets" instance=ExtResource( 6 )]
 position = Vector2( 0, 1360 )
 scale = Vector2( 1.5, 1.5 )
+PlanetGameNetworksPath = "res://Scene/Networks/HorrorShipTask/HorrorShipTaskNetwork.tscn"
 
 [node name="HauntedDreamPlanet" parent="Planets" instance=ExtResource( 3 )]
 position = Vector2( 1264, -596 )
 scale = Vector2( 1.5, 1.5 )
+PlanetGameNetworksPath = "res://Scene/Networks/HauntedDream/HauntedDreamNetwork.tscn"
 
 [node name="ColorSmasherPlanet" parent="Planets" instance=ExtResource( 4 )]
 position = Vector2( 1272, 832 )
 scale = Vector2( 1.5, 1.5 )
+PlanetGameNetworksPath = "res://Scene/Networks/ColorSmasher/ColorSmasherNetworks.tscn"
 
 [node name="DeveloperPlanet" parent="Planets" instance=ExtResource( 5 )]
 position = Vector2( -1024, -640 )

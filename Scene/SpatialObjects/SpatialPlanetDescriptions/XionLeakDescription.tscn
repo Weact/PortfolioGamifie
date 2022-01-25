@@ -9,7 +9,7 @@ size = 48
 font_data = ExtResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 272, 96 )
+extents = Vector2( 272, 120 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 48
@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="Description1" type="RigidBody2D" parent="."]
-position = Vector2( -864, 0 )
+position = Vector2( -864, -24 )
 mass = 5.85
 physics_material_override = ExtResource( 3 )
 gravity_scale = 0.0
@@ -33,7 +33,7 @@ continuous_cd = 1
 [node name="Panel" type="Panel" parent="Description1"]
 modulate = Color( 1, 1, 1, 0.392157 )
 margin_right = 544.0
-margin_bottom = 192.0
+margin_bottom = 240.0
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -45,11 +45,12 @@ margin_bottom = 189.0
 custom_fonts/font = SubResource( 1 )
 text = "ludus game jam 2019
 team project
+with babadesbois
 pc / steam
 with godot engine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Description1"]
-position = Vector2( 272, 96 )
+position = Vector2( 272, 120 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true

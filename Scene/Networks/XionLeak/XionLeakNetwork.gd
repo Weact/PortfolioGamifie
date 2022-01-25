@@ -1,7 +1,7 @@
 extends Node2D
-class_name DeveloperNetworks
-func is_class(value: String): return value == "DeveloperNetworks" or .is_class(value)
-func get_class() -> String: return "DeveloperNetworks"
+class_name XionLeakNetwork
+func is_class(value: String): return value == "XionLeakNetwork" or .is_class(value)
+func get_class() -> String: return "XionLeakNetwork"
 
 export var itch_link : String = ""
 var should_open_itch : bool = true

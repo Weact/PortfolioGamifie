@@ -1,0 +1,321 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=4]
+
+[sub_resource type="GDScript" id=15]
+script/source = "extends Node2D
+class_name HorrorShipTaskNetwork
+
+func is_class(value: String): return value == \"HorrorShipTaskNetwork\" or .is_class(value)
+func get_class() -> String: return \"HorrorShipTaskNetwork\"
+
+export var itch_link : String = \"\"
+var should_open_itch : bool = true
+export var twitter_link : String = \"\"
+var should_open_twitter : bool = true
+
+onready var itcharea : Area2D = get_node(\"ItchIO/itcharea\")
+onready var twitterarea : Area2D = get_node(\"Twitter/twitterarea\")
+
+onready var itchioplayer_node : AnimationPlayer = get_node(\"ItchIOPlayer\")
+onready var twitterplayer_node : AnimationPlayer = get_node(\"TwitterPlayer\")
+
+#### ACCESSORS ####
+
+#### BUILT-IN ####
+
+func _ready() -> void:
+	var __
+	__ = itcharea.connect(\"body_entered\", self, \"_on_body_entered_itch_area\")
+	__ = itcharea.connect(\"body_exited\", self, \"_on_body_exited_itch_area\")
+	
+	__ = twitterarea.connect(\"body_entered\", self, \"_on_body_entered_twitter_area\")
+	__ = twitterarea.connect(\"body_exited\", self, \"_on_body_exited_twitter_area\")
+
+#### VIRTUALS ####
+
+#### LOGIC ####
+
+func call_website(website_name : String) -> void:
+	match(website_name):
+		\"itchio\":
+			if should_open_itch:
+				var __ = OS.shell_open(itch_link)
+		\"twitter\":
+			if should_open_twitter:
+				var __ = OS.shell_open(twitter_link)
+
+#### INPUTS ####
+
+#### SIGNAL RESPONSES ####
+
+func _on_body_entered_itch_area(body: PhysicsBody2D) -> void:
+	if body is Player:
+		itchioplayer_node.set_speed_scale(1.0)
+		itchioplayer_node.play(\"itchio_appear\")
+		should_open_itch = true
+
+func _on_body_exited_itch_area(body: PhysicsBody2D) -> void:
+	if body is Player:
+		itchioplayer_node.set_speed_scale(3.0)
+		itchioplayer_node.play_backwards(\"itchio_appear\")
+		should_open_itch = false
+
+func _on_body_entered_twitter_area(body: PhysicsBody2D) -> void:
+	if body is Player:
+		twitterplayer_node.set_speed_scale(1.0)
+		twitterplayer_node.play(\"twitter_appear\")
+		should_open_twitter = true
+
+func _on_body_exited_twitter_area(body: PhysicsBody2D) -> void:
+	if body is Player:
+		twitterplayer_node.set_speed_scale(3.0)
+		twitterplayer_node.play_backwards(\"twitter_appear\")
+		should_open_twitter= false
+"
+
+[sub_resource type="StreamTexture" id=16]
+flags = 4
+load_path = "res://.import/ItchIo.png-58ebd2e43b215b945138e67e79a85772.stex"
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.607843, 0, 0, 0.784314 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 1, 1, 1, 0.784314 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=19]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 412, 32 )
+
+[sub_resource type="StreamTexture" id=21]
+flags = 4
+load_path = "res://.import/Twitter.png-49ec27b1215a87fdbe164aef2f02a0d2.stex"
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0, 0.196078, 0.607843, 0.784314 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color( 0, 1, 0, 0.6 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 1, 1, 1, 0.784314 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="DynamicFont" id=24]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 304, 32 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "itchio_appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ItchIO/ItchIOPanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.3 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "itchio" ],
+"method": "call_website"
+} ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "twitter_appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Twitter/TwitterPanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "twitter" ],
+"method": "call_website"
+} ]
+}
+
+[node name="DeveloperNetworks" type="Node2D"]
+script = SubResource( 15 )
+itch_link = "https://weact.itch.io/horror-ship-task"
+
+[node name="ItchIO" type="Sprite" parent="."]
+texture = SubResource( 16 )
+
+[node name="ItchIOPanel" type="Panel" parent="ItchIO"]
+show_behind_parent = true
+anchor_left = 3.875
+anchor_top = 0.5
+anchor_right = 3.875
+anchor_bottom = 0.5
+margin_left = -304.0
+margin_top = -82.0
+margin_right = 560.0
+margin_bottom = 17.0
+rect_scale = Vector2( 1.1, 1.3 )
+rect_pivot_offset = Vector2( 432, 49 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ItchIO"]
+modulate = Color( 1, 1, 1, 0.784314 )
+self_modulate = Color( 1, 1, 1, 0.627451 )
+anchor_left = 4.629
+anchor_top = 0.5
+anchor_right = 4.629
+anchor_bottom = 0.5
+margin_left = -264.256
+margin_top = -64.0
+margin_right = 495.744
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="ItchIO"]
+margin_left = 40.0
+margin_top = -32.0
+margin_right = 780.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 19 )
+text = "https://weact.itch.io/horror-ship-task"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="itcharea" type="Area2D" parent="ItchIO"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItchIO/itcharea"]
+position = Vector2( 372, 0 )
+shape = SubResource( 20 )
+
+[node name="Twitter" type="Sprite" parent="."]
+visible = false
+position = Vector2( -40, 80 )
+texture = SubResource( 21 )
+
+[node name="TwitterPanel" type="Panel" parent="Twitter"]
+show_behind_parent = true
+anchor_left = 3.875
+anchor_top = 0.5
+anchor_right = 3.875
+anchor_bottom = 0.5
+margin_left = -304.25
+margin_top = -95.5
+margin_right = 335.75
+margin_bottom = 32.5
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 268, 48 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="Twitter"]
+modulate = Color( 1, 1, 1, 0.784314 )
+self_modulate = Color( 1, 1, 1, 0.627451 )
+anchor_left = 4.629
+anchor_top = 0.5
+anchor_right = 4.629
+anchor_bottom = 0.5
+margin_left = -254.998
+margin_top = -55.5
+margin_right = 273.002
+margin_bottom = 8.5
+mouse_filter = 2
+custom_styles/panel = SubResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="Twitter"]
+margin_left = 40.0
+margin_top = -24.0
+margin_right = 556.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 24 )
+text = "https://twitter.com/weacct"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="twitterarea" type="Area2D" parent="Twitter"]
+position = Vector2( 0, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Twitter/twitterarea"]
+position = Vector2( 264, 0 )
+shape = SubResource( 25 )
+disabled = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItchIOPlayer" type="AnimationPlayer" parent="."]
+anims/itchio_appear = SubResource( 13 )
+
+[node name="TwitterPlayer" type="AnimationPlayer" parent="."]
+anims/twitter_appear = SubResource( 14 )

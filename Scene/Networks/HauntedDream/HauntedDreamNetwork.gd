@@ -1,18 +1,22 @@
 extends Node2D
-class_name DeveloperNetworks
-func is_class(value: String): return value == "DeveloperNetworks" or .is_class(value)
-func get_class() -> String: return "DeveloperNetworks"
+class_name HauntedDreamNetwork
+func is_class(value: String): return value == "HauntedDreamNetwork" or .is_class(value)
+func get_class() -> String: return "HauntedDreamNetwork"
 
 export var itch_link : String = ""
 var should_open_itch : bool = true
 export var twitter_link : String = ""
 var should_open_twitter : bool = true
+export var global_link : String = ""
+var should_open_global : bool = true
 
 onready var itcharea : Area2D = get_node("ItchIO/itcharea")
 onready var twitterarea : Area2D = get_node("Twitter/twitterarea")
+onready var globalarea : Area2D = get_node("GGJ/globalarea")
 
 onready var itchioplayer_node : AnimationPlayer = get_node("ItchIOPlayer")
 onready var twitterplayer_node : AnimationPlayer = get_node("TwitterPlayer")
+onready var globalplayer_node : AnimationPlayer = get_node("GlobalPlayer")
 
 #### ACCESSORS ####
 
@@ -25,6 +29,9 @@ func _ready() -> void:
 	
 	__ = twitterarea.connect("body_entered", self, "_on_body_entered_twitter_area")
 	__ = twitterarea.connect("body_exited", self, "_on_body_exited_twitter_area")
+	
+	__ = globalarea.connect("body_entered", self, "_on_body_entered_global_area")
+	__ = globalarea.connect("body_exited", self, "_on_body_exited_global_area")
 
 #### VIRTUALS ####
 
@@ -38,6 +45,9 @@ func call_website(website_name : String) -> void:
 		"twitter":
 			if should_open_twitter:
 				var __ = OS.shell_open(twitter_link)
+		"global":
+			if should_open_global:
+				var __ = OS.shell_open(global_link)
 
 #### INPUTS ####
 
@@ -66,3 +76,15 @@ func _on_body_exited_twitter_area(body: PhysicsBody2D) -> void:
 		twitterplayer_node.set_speed_scale(3.0)
 		twitterplayer_node.play_backwards("twitter_appear")
 		should_open_twitter= false
+
+func _on_body_entered_global_area(body: PhysicsBody2D) -> void:
+	if body is Player:
+		globalplayer_node.set_speed_scale(1.0)
+		globalplayer_node.play("global_appear")
+		should_open_global = true
+
+func _on_body_exited_global_area(body: PhysicsBody2D) -> void:
+	if body is Player:
+		globalplayer_node.set_speed_scale(3.0)
+		globalplayer_node.play_backwards("global_appear")
+		should_open_global= false
