@@ -17,9 +17,6 @@ var movement = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	movements_handler(delta)
 	move(delta)
-	
-	for i in get_slide_count():
-		print(i)
 
 #### LOGIC ####
 
@@ -39,7 +36,7 @@ func move(_delta) -> void:
 	movement = position.direction_to(destination) * speed
 	move_direction = rad2deg(destination.angle_to_point(position))
 	
-	if position.distance_to(destination) > 50:
+	if position.distance_to(destination) > 2:
 		movement = move_and_slide(movement)
 	else:
 		moving = false

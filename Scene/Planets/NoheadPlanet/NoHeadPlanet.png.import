@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DeveloperInformationPlanet.png-e0450c26b870526c51d81ab6b44354ae.stex"
+path="res://.import/NoHeadPlanet.png-2adde232b4ca4946ebdaf71dc876c0de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scene/Planets/DeveloperPlanet/DeveloperInformationPlanet.png"
-dest_files=[ "res://.import/DeveloperInformationPlanet.png-e0450c26b870526c51d81ab6b44354ae.stex" ]
+source_file="res://Scene/Planets/NoheadPlanet/NoHeadPlanet.png"
+dest_files=[ "res://.import/NoHeadPlanet.png-2adde232b4ca4946ebdaf71dc876c0de.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

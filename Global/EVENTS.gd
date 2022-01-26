@@ -19,6 +19,16 @@ var achievements : Dictionary = {
 		"unlocked":false
 	},
 	
+	#NO HEAD
+	"achievement_nohead": {
+		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER NO HEAD",
+		"unlocked":false
+	},
+	"achievement_nohead_itchio":{
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT NOHEAD'S ITCH.IO",
+		"unlocked":false
+	},
+	
 	#COLOR SMASHER
 	"achievement_colorsmasher": {
 		"name":"ACHIEVEMENT UNLOCKED:\nDISCOVER COLOR SMASHER",
@@ -68,6 +78,10 @@ var achievements : Dictionary = {
 	},
 	
 	#MISCELANIOUS
+	"achievement_all_planetlinks":{
+		"name":"ACHIEVEMENT UNLOCKED:\nVISIT ALL PLANETS\nAND LINKS IN THE GAME",
+		"unlocked":false
+	},
 	"achievement_all_links_visited": {
 		"name":"ACHIEVEMENT UNLOCKED:\nVISIT ALL LINKS AVAILABLE IN THE GAME",
 		"unlocked":false
@@ -81,8 +95,19 @@ var achievements : Dictionary = {
 	"achievement_outside_universe": {
 		"name":"ACHIEVEMENT UNLOCKED:\nUNIVERSE EXPLORED",
 		"unlocked":false
+	},
+	
+	#GAME
+	"achievement_completed_game":{
+		"name":"ACHIEVEMENT UNLOCKED: COMPLETE THE GAME\nCONGRATULATIONS\nTHANKS FOR PLAYING!",
+		"unlocked":false
 	}
 }
+
+signal achievement_unlocked()
+
+var planet_achievements : PoolStringArray = ["achievement_developer","achievement_xionleak","achievement_colorsmasher","achievement_nohead","achievement_hst","achievement_haunteddream"]
+var links_achievements : PoolStringArray = ["achievement_xionleak_twitter","achievement_developer_twitter","achievement_developer_itchio","achievement_nohead_itchio","achievement_hst_itchio","achievement_haunteddream_itchio","achievement_haunteddream_global", "achievement_colorsmasher_itchio"]
 
 #### ACCESSORS ####
 
@@ -112,6 +137,9 @@ func is_achievement_unlocked(achievement_name : String = "") -> bool:
 
 #### BUILT IN ####
 
+func _ready() -> void:
+	var __ = connect("achievement_unlocked", self, "_on_achievement_unlocked")
+
 #### LOGIC ####
 
 func display_achievements_state() -> void:
@@ -123,6 +151,7 @@ func display_achievements_state() -> void:
 func unlock_achievement(ACH_NAME: String = "") -> String:
 	if get_achievement(ACH_NAME) != "":
 		set_achievement_unlocked(ACH_NAME, true)
+
 		return achievements[ACH_NAME].name
 	else:
 		return ""
@@ -137,11 +166,54 @@ func achievement_exists(achievement_name : String = "") -> bool:
 func display_achievement(achievement_name : String = "") -> void:
 	if is_instance_valid(ach_label):
 		if achievement_name != "" and not is_achievement_unlocked(achievement_name):
-			ach_label.set_text(unlock_achievement(achievement_name))
-			ach_player.play(ach_anim_name)
+			var achievement_to_display = unlock_achievement(achievement_name)
+			if achievement_to_display != "":
+				ach_label.set_text(achievement_to_display)
+				ach_player.play(ach_anim_name)
+			emit_signal("achievement_unlocked")
 	else:
 		push_error("Tried to display an achievement on a label but it could not be found")
+
+func check_for_planets_achievements() -> bool:
+	for ach in planet_achievements:
+		if not is_achievement_unlocked(ach):
+			return false
+	return true
+	
+func check_for_links_achievements() -> bool:
+	for ach in links_achievements:
+		if not is_achievement_unlocked(ach):
+			return false
+	return true
+
+func check_for_planetlinks_achievement() -> bool:
+	if is_achievement_unlocked("achievement_all_planetlinks"):
+		return true
+	else:
+		return false
+
+func unlock_outside_universe() -> void:
+	if check_for_planets_achievements() and not is_achievement_unlocked("achievement_outside_universe"):
+		display_achievement("achievement_outside_universe")
 
 #### VIRTUALS ####
 
 #### SIGNALS ####
+func _on_achievement_unlocked() -> void:
+	if not is_achievement_unlocked("achievement_all_planets_discovered"):
+		if check_for_planets_achievements():
+			print("achievement_all_planets_discovered has been unlocked!")
+			display_achievement("achievement_all_planets_discovered")
+	if not is_achievement_unlocked("achievement_all_links_visited"):
+		if check_for_links_achievements():
+			print("achievement_all_links_visited has been unlocked!")
+			display_achievement("achievement_all_links_visited")
+	if not is_achievement_unlocked("achievement_all_planetlinks"):
+		if check_for_planets_achievements() and check_for_links_achievements():
+			print("achievement_all_planetlinks has been unlocked!")
+			display_achievement("achievement_all_planetlinks")
+	if not is_achievement_unlocked("achievement_completed_game"):
+		if check_for_planetlinks_achievement() and is_achievement_unlocked("achievement_outside_universe"):
+			print("achievement_completed_game has been unlocked!")
+			display_achievement("achievement_completed_game")
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scene/Game/GameBackground1024.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Planets/XionLeakPlanet/XionLeakPlanet.tscn" type="PackedScene" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=11]
 [ext_resource path="res://Scene/Game/Game.gd" type="Script" id=12]
 [ext_resource path="res://Scene/Game/AchievementPanel.gd" type="Script" id=13]
+[ext_resource path="res://Scene/Planets/NoheadPlanet/NoheadPlanet.tscn" type="PackedScene" id=14]
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 4398.81
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Node
@@ -155,6 +159,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="UniverseLimit" type="Area2D" parent="."]
+
+[node name="UniverseHitbox" type="CollisionShape2D" parent="UniverseLimit"]
+visible = false
+shape = SubResource( 9 )
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -179,25 +189,29 @@ __meta__ = {
 }
 
 [node name="XionLeakPlanet" parent="Planets" instance=ExtResource( 2 )]
-position = Vector2( -1528, 640 )
+position = Vector2( -1280, -384 )
 scale = Vector2( 1.5, 1.5 )
 PlanetGameNetworksPath = "res://Scene/Networks/XionLeak/XionLeakNetwork.tscn"
 
 [node name="HorrorShipTaskPlanet" parent="Planets" instance=ExtResource( 6 )]
-position = Vector2( 320, 1232 )
+position = Vector2( 0, 1408 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="HauntedDreamPlanet" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 1048, -896 )
+position = Vector2( -1280, 1024 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="ColorSmasherPlanet" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 1872, 600 )
+position = Vector2( 1280, 1024 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="DeveloperPlanet" parent="Planets" instance=ExtResource( 5 )]
-position = Vector2( -1072, -824 )
+position = Vector2( 0, -1024 )
 scale = Vector2( 3, 3 )
+
+[node name="NoheadPlanet" parent="Planets" instance=ExtResource( 14 )]
+position = Vector2( 1280, -384 )
+scale = Vector2( 2, 2 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, -25 )

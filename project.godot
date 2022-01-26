@@ -59,6 +59,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scene/Networks/network.gd"
 }, {
+"base": "NetworkBase",
+"class": "NoHeadNetwork",
+"language": "GDScript",
+"path": "res://Scene/Networks/Nohead/NoHeadNetwork.gd"
+}, {
+"base": "Planet",
+"class": "NoHeadPlanet",
+"language": "GDScript",
+"path": "res://Scene/Planets/NoheadPlanet/NoheadPlanet.gd"
+}, {
 "base": "Node2D",
 "class": "Planet",
 "language": "GDScript",
@@ -95,6 +105,8 @@ _global_script_class_icons={
 "HorrorShipTaskNetwork": "",
 "HorrorShipTaskPlanet": "",
 "NetworkBase": "",
+"NoHeadNetwork": "",
+"NoHeadPlanet": "",
 "Planet": "",
 "Player": "",
 "ScreenTitleMenu": "",
@@ -133,7 +145,7 @@ texture={
 "compress/normal_map": 0,
 "detect_3d": false,
 "flags/anisotropic": false,
-"flags/filter": true,
+"flags/filter": false,
 "flags/mipmaps": false,
 "flags/repeat": 0,
 "flags/srgb": 2,

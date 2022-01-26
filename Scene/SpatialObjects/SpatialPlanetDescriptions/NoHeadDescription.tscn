@@ -2,21 +2,24 @@
 
 [ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Scene/GameLabel/GameLabel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="DynamicFont" id=2]
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 272, 120 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 292, 120 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 228, 96 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 264, 96 )
 
 [node name="XionLeakDescription" type="Node2D"]
 __meta__ = {
@@ -24,15 +27,15 @@ __meta__ = {
 }
 
 [node name="Description1" type="RigidBody2D" parent="."]
-position = Vector2( -864, -24 )
+position = Vector2( -976, -24 )
 mass = 5.85
-physics_material_override = ExtResource( 3 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 continuous_cd = 1
 
 [node name="Panel" type="Panel" parent="Description1"]
 modulate = Color( 1, 1, 1, 0.392157 )
-margin_right = 544.0
+margin_right = 584.0
 margin_bottom = 240.0
 mouse_filter = 2
 __meta__ = {
@@ -41,31 +44,30 @@ __meta__ = {
 }
 
 [node name="GameLabel" parent="Description1" instance=ExtResource( 2 )]
-margin_right = 537.0
-margin_bottom = 189.0
-custom_fonts/font = SubResource( 1 )
-text = "ludus game jam 2019
+margin_right = 573.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 2 )
+text = "GLOBAL GAME JAM 2022
 team project
-with babadesbois
-pc / steam
+PC WINDOWS / BROWSER
 with godot engine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Description1"]
-position = Vector2( 272, 120 )
-shape = SubResource( 2 )
+position = Vector2( 292, 120 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Description2" type="RigidBody2D" parent="."]
-position = Vector2( 256, 0 )
+position = Vector2( 400, 0 )
 mass = 5.85
 gravity_scale = 0.0
 continuous_cd = 1
 
 [node name="Panel" type="Panel" parent="Description2"]
 modulate = Color( 1, 1, 1, 0.392157 )
-margin_right = 456.0
+margin_right = 528.0
 margin_bottom = 192.0
 mouse_filter = 2
 __meta__ = {
@@ -76,15 +78,15 @@ __meta__ = {
 [node name="GameLabel2" parent="Description2" instance=ExtResource( 2 )]
 margin_right = 450.0
 margin_bottom = 189.0
-custom_fonts/font = SubResource( 3 )
-text = "coop (2 players)
-local and online
+custom_fonts/font = SubResource( 4 )
+text = "SINGLEPLAYER
 2d, pixel art
-platformer"
+platformer, HORROR
+PUZZLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Description2"]
-position = Vector2( 228, 96 )
-shape = SubResource( 4 )
+position = Vector2( 264, 96 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }

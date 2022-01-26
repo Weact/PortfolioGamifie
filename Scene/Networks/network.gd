@@ -18,9 +18,6 @@ var should_open_global : bool = true
 
 #### BUILT-IN ####
 
-func _ready() -> void:
-	print(get_name())
-
 #### VIRTUALS ####
 
 
