@@ -3,8 +3,8 @@ class_name Game
 func is_class(value: String): return value == "Game" or .is_class(value)
 func get_class() -> String: return "Game"
 
-onready var achievement_label : Label = get_node("Achievements/CanvasLayer/AchievementPanel/AchievementName")
-onready var achievement_animationplayer : AnimationPlayer = get_node("Achievements/AnimationPlayer")
+onready var achievement_label : Label = get_node("UI/CanvasLayer/AchievementPanel/AchievementName")
+onready var ui_animationplayer : AnimationPlayer = get_node("UI/AnimationPlayer")
 
 onready var universe_area_node : Area2D = get_node("UniverseLimit")
 #### ACCESSORS ####
@@ -13,7 +13,7 @@ onready var universe_area_node : Area2D = get_node("UniverseLimit")
 
 func _ready() -> void:
 	EVENTS.ach_label = achievement_label
-	EVENTS.ach_player = achievement_animationplayer
+	EVENTS.ach_player = ui_animationplayer
 	EVENTS.ach_anim_name = "display_achievement"
 	
 	var __ = universe_area_node.connect("body_exited", self, "_on_body_exited_universe_area")
@@ -31,3 +31,4 @@ func unlock_game_achievement(ach_name : String = "") -> void:
 func _on_body_exited_universe_area(body: PhysicsBody2D) -> void:
 	if body is Player:
 		EVENTS.unlock_outside_universe()
+		ui_animationplayer.play("display_tutoreset")

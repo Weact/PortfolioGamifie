@@ -3643,11 +3643,8 @@ PlanetGameNetworksPath = "res://Scene/Networks/Developer/DeveloperNetworks.tscn"
 [node name="PlanetAnimation" parent="." index="0"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 26 )
-frame = 810
+frame = 203
 playing = true
-
-[node name="PlanetShape" parent="." index="1"]
-visible = false
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
 shape = SubResource( 27 )

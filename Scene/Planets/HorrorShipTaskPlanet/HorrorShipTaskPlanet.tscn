@@ -2982,11 +2982,8 @@ PlanetGameNetworksPath = "res://Scene/Networks/HorrorShipTask/HorrorShipTaskNetw
 [node name="PlanetAnimation" parent="." index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 26 )
-frame = 550
+frame = 386
 playing = true
-
-[node name="PlanetShape" parent="." index="1"]
-visible = false
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
 shape = SubResource( 27 )
