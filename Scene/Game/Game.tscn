@@ -217,7 +217,6 @@ scale = Vector2( 2, 2 )
 position = Vector2( 0, -25 )
 rotation = -1.57079
 z_index = 5
-max_speed = 5000
 acceleration = 500
 
 [node name="Tuto" type="Node" parent="."]

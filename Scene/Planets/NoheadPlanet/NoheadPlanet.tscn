@@ -3191,7 +3191,7 @@ PlanetGameNetworksPath = "res://Scene/Networks/Nohead/NoHeadNetwork.tscn"
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 626 )
-frame = 452
+frame = 281
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]
