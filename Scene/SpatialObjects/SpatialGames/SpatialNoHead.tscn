@@ -1,0 +1,222 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Fonts/GameFont3D.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scene/SpatialObjects/SpatialPhysic/SpatialObjectPhysicsOverride.tres" type="PhysicsMaterial" id=2]
+[ext_resource path="res://Assets/Fonts/GameFont.tres" type="DynamicFontData" id=3]
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32.375, 31.375 )
+
+[sub_resource type="PhysicsMaterial" id=5]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="DynamicFont" id=6]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32.375, 31.375 )
+
+[sub_resource type="PhysicsMaterial" id=8]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="DynamicFont" id=9]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 32.375, 31.375 )
+
+[sub_resource type="PhysicsMaterial" id=11]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.6875, 31.375 )
+
+[node name="SpatialXionLeak" type="Node2D"]
+show_behind_parent = true
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="N" type="RigidBody2D" parent="."]
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+
+[node name="Label" type="Label" parent="N"]
+margin_right = 40.0
+margin_bottom = 366.0
+custom_fonts/font = SubResource( 3 )
+text = "n"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N"]
+position = Vector2( 16.375, 183.375 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="O" type="RigidBody2D" parent="."]
+position = Vector2( 80, 0 )
+physics_material_override = SubResource( 5 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="O"]
+margin_right = 40.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 6 )
+text = "o"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="O"]
+position = Vector2( 19, 184 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="H" type="RigidBody2D" parent="."]
+position = Vector2( 160, 0 )
+physics_material_override = SubResource( 8 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="H"]
+margin_right = 40.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 9 )
+text = "h"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="H"]
+position = Vector2( 19, 184 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="E" type="RigidBody2D" parent="."]
+position = Vector2( 240, 0 )
+physics_material_override = SubResource( 11 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="E"]
+margin_right = 40.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+text = "e"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E"]
+position = Vector2( 17.3125, 184 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="A" type="RigidBody2D" parent="."]
+position = Vector2( 320, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="A"]
+margin_right = 40.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+text = "a"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A"]
+position = Vector2( 20, 184 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="D" type="RigidBody2D" parent="."]
+position = Vector2( 400, 0 )
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+continuous_cd = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="D"]
+margin_right = 40.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+text = "d"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D"]
+position = Vector2( 19, 184 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

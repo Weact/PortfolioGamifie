@@ -224,7 +224,7 @@ PlanetGameDescriptionPath = "res://Scene/SpatialObjects/SpatialPlanetDescription
 
 [node name="PlanetAnimation" parent="." index="0"]
 frames = SubResource( 26 )
-frame = 5
+frame = 18
 playing = true
 
 [node name="PlanetHitBox" parent="PlanetShape" index="0"]

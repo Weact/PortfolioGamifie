@@ -30,6 +30,7 @@ continuous_cd = 1
 modulate = Color( 1, 1, 1, 0.392157 )
 margin_right = 672.0
 margin_bottom = 184.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -60,6 +61,7 @@ gravity_scale = 0.0
 modulate = Color( 1, 1, 1, 0.392157 )
 margin_right = 592.0
 margin_bottom = 192.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""

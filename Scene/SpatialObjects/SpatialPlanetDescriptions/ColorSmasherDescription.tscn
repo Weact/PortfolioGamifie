@@ -23,6 +23,7 @@ modulate = Color( 1, 1, 1, 0.392157 )
 margin_left = -8.0
 margin_right = 552.0
 margin_bottom = 144.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,6 +49,7 @@ modulate = Color( 1, 1, 1, 0.392157 )
 margin_left = -16.0
 margin_right = 576.0
 margin_bottom = 240.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

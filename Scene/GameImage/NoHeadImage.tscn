@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/GameImage/NoheadImage.png" type="Texture" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0, 0, 0, 0.784314 )
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color( 1, 1, 1, 1 )
+shadow_size = 100
+shadow_offset = Vector2( 10, 10 )
+anti_aliasing_size = 1.0
+
+[node name="NoHeadImage" type="Panel"]
+show_behind_parent = true
+margin_right = 1656.0
+margin_bottom = 1352.0
+rect_pivot_offset = Vector2( 768, 448 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 816, 672 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
